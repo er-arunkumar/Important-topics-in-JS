@@ -56,3 +56,108 @@ number.welcome =function(){
 delete number.welcome
 delete number.age
 console.log(number)
+
+// Primitives vs Reference value
+
+// Primitives value can't change the x variable
+let x=10
+let y=x
+x=20
+console.log("value of a is "+ x + ", value of b is "+ y);
+
+// Reference type value can change the x variable
+let f={
+    x:5,
+    
+};
+
+let r=f
+console.log(r);
+f.value=30
+console.log(r);
+
+// Global Variable Scope
+let c=10
+function greet(){
+    c =20
+}
+console.log(c);
+greet();
+console.log(c); //varible can change different areas in the program
+
+// Local variable Scope
+
+let d="hello"
+
+function invite(){
+    let e="World"
+    console.log(d +" "+ e);
+}
+invite();
+console.log(d+e);// e is not defined, because variable can accessed within a functions
+
+// let - Block-Scoped Variable
+// var - Function Scoped variable
+
+let h="hello"
+
+function invites(){
+    let e="World"
+    console.log(h +" "+ e);
+    if(e=="World"){
+        var g ="world"
+        console.log(dh+" "+ e +" "+ g); //g is not defined because using let varible. Change the variable let to var it's working
+    }
+    console.log(h+" "+e+" "+g);
+}
+invites();
+
+// Enumerating Properties of an Object
+
+let user ={
+    name:"Arun",
+    greetingFullName(){
+        console.log(`My name is ${this.name}`);
+    }
+};
+
+// keys and enteries method
+
+for(let news of Object.keys(user))
+    console.log(news);
+
+for(let key of Object.entries(user))
+    console.log(key);
+// for in loop
+for(let key in user){
+    console.log(key,user[key]);
+}
+// for of loop
+for(let key of user){
+    console.log(key); // Objects are not iterable
+}
+
+// Object Cloning
+
+// assign()
+let obj={
+    name:"Arun",
+    age:24
+}
+let obj2=Object.assign({gender:"male"},obj)
+console.log(obj);
+console.log(obj2);
+
+// Spread Operator
+
+let jungle={
+    name:"edward"
+}
+let anotherObject ={
+    ...jungle
+};
+
+anotherObject.age=23
+console.log(jungle);
+console.log(anotherObject);
+
