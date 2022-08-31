@@ -37,3 +37,14 @@ console.log(Math.max(a));
 let b=[45,37,18,95,54]
 console.log(Math.max(...b));
 console.log(Math.min(...b));
+
+// String Properties
+let d="Arunkumar"
+console.log(d.length);
+console.log(typeof(d));
+console.log(d.at(3)); // atIndexof()
+console.log(d.toUpperCase());
+console.log(d.toLowerCase());
+console.log(d.repeat(3));
+console.log(d.replace("Arun","selvam"));
+
